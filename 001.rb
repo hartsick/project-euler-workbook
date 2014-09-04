@@ -14,7 +14,8 @@ p (threes | fives).reduce(:+)
 
 # 09/03/2014
 def multiples(multiplier)
-  Range.new( 0, 1000, true ).step(multiplier).to_a
+  (0...1000).step(multiplier).to_a
 end
 
 p (multiples(3) | multiples(5)).reduce(:+)
+
