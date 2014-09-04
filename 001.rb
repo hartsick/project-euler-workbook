@@ -11,3 +11,10 @@ threes  = range.step(3).to_a
 fives   = range.step(5).to_a
 
 p (threes | fives).reduce(:+)
+
+# 09/03/2014
+def multiples(multiplier)
+  Range.new( 0, 1000, true ).step(multiplier).to_a
+end
+
+p (multiples(3) | multiples(5)).reduce(:+)
