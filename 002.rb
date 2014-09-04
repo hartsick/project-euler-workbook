@@ -10,7 +10,7 @@
 # 09/03/2014
 
 sum = 0
-fib = [2,1,0]
+fib = [1,1,0]
 
 while fib.last < 4000000
   if fib.last % 2 == 0
