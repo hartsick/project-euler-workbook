@@ -5,7 +5,9 @@
 #
 # What is the largest prime factor of the number 600851475143 ?
 
-# 9/3/2014
+######################################################################
+
+# 9/3/2014 Solution
 
 # first 1000 prime numbers
 PRIME_NUMS = %w{
@@ -123,4 +125,24 @@ end
 
 num = 600851475143
 
-primes(num)
+# primes(num)
+
+
+######################################################################
+
+# 9/18/2014 Solution
+require 'prime'
+
+def primes_2(number)
+  sqrt = Math.sqrt(number)
+  highest = 0
+
+  Prime.each(sqrt) do |prime|
+    highest = prime unless number % prime != 0
+  end
+
+  p "Highest prime factor: #{highest}"
+end
+
+primes_2(num)
+
