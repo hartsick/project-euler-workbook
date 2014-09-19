@@ -11,7 +11,7 @@
 def solution_1
   starting_time = Time.now
 
-  divisors = 1..20
+  divisors = 2..20
   counter = 1
   smallest = 0
   divisible = false
