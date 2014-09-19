@@ -11,27 +11,6 @@
 def solution_1
   starting_time = Time.now
 
-  divisors = 11..20
-  counter = 1
-  smallest = 0
-  divisible = false
-
-  while divisible == false
-    multiple = 20 * counter
-    divisors.each do |divisor|
-      if multiple % divisor == 0
-        if divisor == divisors.last
-          smallest = multiple
-          divisible = true
-        end
-      else
-        break
-      end
-    end
-    counter += 1
-  end
-
-  p "Smallest positive number: #{smallest}"
   p "In #{Time.now - starting_time} seconds"
 end
 
