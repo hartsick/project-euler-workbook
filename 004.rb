@@ -7,9 +7,9 @@
 
 ######################################################################
 
-# 9/18/2014 Solution
-
 MAX_NUM = 999
+
+# 9/18/2014 Solution
 
 def solution_1
   products = []
@@ -30,6 +30,8 @@ def solution_1
   sorted = products.uniq.sort!{|x,y| y <=> x }
 
   sorted.each do |number|
+
+    # counters
     length = number.to_s.length
     half = (length / 2).floor
     fwd_counter = 0
@@ -51,3 +53,27 @@ def solution_1
 end
 
 solution_1
+
+
+######################################################################
+
+# 9/19/2014 Solution
+
+def solution_2
+  products = []
+  palindromes = []
+
+  for m1 in 0..MAX_NUM
+    for m2 in 0..MAX_NUM
+      products << m1 * m2
+    end
+  end
+
+  products.each do |product|
+    palindromes << product if product.to_s == product.to_s.reverse
+  end
+
+  p "Largest palindrome: #{palindromes.sort{|x,y| y <=> x}.first}"
+end
+
+solution_2
