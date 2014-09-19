@@ -17,7 +17,9 @@ def solution_1
 
   range = 1..100
 
-  p "Difference: #{square_sum(range) - sum_squares(range)}"
+  difference = square_sum(range) - sum_squares(range)
+
+  p "Difference: #{difference}"
   p "In #{Time.now - starting_time} seconds"
 end
 
