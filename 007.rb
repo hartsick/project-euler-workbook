@@ -12,7 +12,7 @@ MAX = 10001
 def solution_1
   starting_time = Time.now
 
-  primes = [2,3]
+  primes = [2,3] # supplement array with first few primes that method below won't catch
   counter = 2
   factor_found = false
 
@@ -34,10 +34,25 @@ def solution_1
     end
   end
 
-  p primes
-  p [primes.last, primes[MAX - 1]]
   p "10,0001st prime: #{primes[MAX - 1]}"
   p "In #{Time.now - starting_time} seconds"
 end
 
 solution_1
+
+######################################################################
+
+# 9/19/2014 Solution
+
+require 'prime'
+
+def solution_2
+  starting_time = Time.now
+
+  10001_prime = Prime.first(MAX).last
+
+  p "#{MAX}st prime: #{10001_prime}"
+  p "In #{Time.now - starting_time} seconds"
+end
+
+solution_2
