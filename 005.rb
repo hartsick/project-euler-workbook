@@ -13,16 +13,14 @@ def solution_1
 
   divisors = 11..20
   counter = 1
-  smallest = 0
-  divisible = false
+  smallest = nil
 
-  while divisible == false
+  while smallest.nil?
     multiple = 20 * counter
     divisors.each do |divisor|
       if multiple % divisor == 0
         if divisor == divisors.last
           smallest = multiple
-          divisible = true
         end
       else
         break
