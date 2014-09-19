@@ -5,14 +5,20 @@
 #
 # Find the sum of all the multiples of 3 or 5 below 1000.
 
-# 09/03/2014
-range   = Range.new( 0, 1000, true )
-threes  = range.step(3).to_a
-fives   = range.step(5).to_a
+######################################################################
 
-p (threes | fives).reduce(:+)
+# 09/03/2014 Solution
 
-# 09/03/2014
+# range   = Range.new( 0, 1000, true )
+# threes  = range.step(3).to_a
+# fives   = range.step(5).to_a
+
+# p (threes | fives).reduce(:+)
+
+######################################################################
+
+# 09/03/2014 Solution
+
 def multiples(multiplier)
   (0...1000).step(multiplier).to_a
 end
