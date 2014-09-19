@@ -52,7 +52,7 @@ def solution_1
   p "Largest palindrome: #{palindromes.first}"
 end
 
-solution_1
+# solution_1
 
 
 ######################################################################
@@ -60,6 +60,8 @@ solution_1
 # 9/19/2014 Solution
 
 def solution_2
+  starting_time = Time.now
+
   products = []
   palindromes = []
 
@@ -74,6 +76,7 @@ def solution_2
   end
 
   p "Largest palindrome: #{palindromes.sort{|x,y| y <=> x}.first}"
+  p "In #{Time.now - starting_time} seconds"
 end
 
 solution_2
