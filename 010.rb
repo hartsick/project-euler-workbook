@@ -26,7 +26,7 @@ def all_primes(num)
   primes = [2]
   potential_primes = (3..num).step(2).to_a
 
-  # sieve of erastothenes
+  # fake sieve of eratosthenes
   while potential_primes.length > 0
     current_num = potential_primes.first
     # add to primes
@@ -38,11 +38,12 @@ def all_primes(num)
   primes
 end
 
-solution_1
+# solution_1
 
 ######################################################################
 
 # 9/21/2014 Solution 2
+# using std lib
 
 require "prime"
 
@@ -59,3 +60,35 @@ def solution_2
 end
 
 solution_2
+
+
+######################################################################
+
+# 9/21/2014 Solution 3
+# Sieve of Eratosthenes
+
+def solution_3(num)
+  starting_time = Time.now
+
+  # actual sieve of eratosthenes
+  potential_primes = (2..num).to_a
+  potential_primes.each_with_index do |val, index|
+    if val
+      index += val
+      while index < num
+        potential_primes[index] = nil
+        index += val
+      end
+    else
+      next
+    end
+  end
+
+  primes = potential_primes.compact
+
+  p "Sum of first #{num} primes: #{primes.reduce(:+)}"
+
+  p "In #{Time.now - starting_time} seconds"
+end
+
+solution_3(MAX_NUM)
